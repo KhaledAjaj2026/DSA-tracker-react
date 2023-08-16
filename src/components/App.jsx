@@ -3,7 +3,7 @@ import Insertion from './Insertion/Insertion';
 import Table from './Table/Table';
 import Deletion from './Deletion/Deletion';
 
-function App() {
+export default function App() {
 	return (
 		<>
 			<header>
@@ -18,5 +18,3 @@ function App() {
 		</>
 	);
 }
-
-export default App;

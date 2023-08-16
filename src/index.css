@@ -35,6 +35,10 @@ body {
   min-height: 100vh;
 }
 
+h2 {
+  font-size: 1em;
+}
+
 p,
 input,
 label,

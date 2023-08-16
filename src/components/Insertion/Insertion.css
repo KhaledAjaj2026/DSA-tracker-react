@@ -1,3 +1,84 @@
 #insertion-section {
-  color: red;
+  margin: 20px;
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: rgb(46, 71, 99);
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 8vh 10vw;
+}
+
+#clearButton {
+  margin-top: 10px;
+}
+
+.input-div {
+  display: flex;
+  justify-content: end;
+  margin: 10px;
+}
+.input-div label {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.input-div input,
+.input-div select {
+  margin-left: 5rem;
+  width: 12rem;
+  height: 1.8rem;
+  line-height: 1.2rem;
+}
+.input-div select {
+  width: 12.2rem;
+}
+.input-div #category-menu {
+  height: 1.8rem;
+  width: 7rem;
+  margin-left: 5rem;
+}
+
+#add-category {
+  width: 4rem;
+  margin: 0;
+  margin-left: 1.2rem;
+}
+
+#categories-selected_title {
+  text-align: center;
+}
+
+#item_window {
+  margin: 20px;
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgb(27, 38, 59);
+  width: 15rem;
+  height: 10rem;
+  padding: 1.2rem;
+  overflow-y: scroll;
+}
+#item_window p {
+  margin: 1rem;
+}
+
+.submit {
+  display: block;
+  margin: 2em 40% auto;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#enter-button {
+  margin: 1.5rem 37% auto;
+  width: 4.5rem;
+  height: 3rem;
+  font-size: 1.2rem;
 }/*# sourceMappingURL=Insertion.css.map */

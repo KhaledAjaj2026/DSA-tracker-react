@@ -2,7 +2,7 @@
   border-radius: 10px;
   padding: 2rem 0;
   background-color: rgb(46, 71, 99);
-  width: 30vw;
+  width: 40vw;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -10,10 +10,17 @@
   align-items: center;
 }
 
+@media screen and (max-width: 600px) {
+  #deletion-section {
+    width: 80vw;
+    margin: auto;
+  }
+}
 .deleteRow-div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 7rem;
 }
 .deleteRow-div input {
   margin: 10px;
@@ -21,15 +28,6 @@
 }
 .deleteRow-div button {
   margin: 0;
-}
-
-.clear-section {
-  justify-content: center;
-  padding: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 5rem;
-  margin: 5vh 0 5vh 40%;
 }
 
 #clearButton {

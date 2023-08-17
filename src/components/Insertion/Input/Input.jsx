@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import './Input.css';
 
 export default function Input({
 	identity,

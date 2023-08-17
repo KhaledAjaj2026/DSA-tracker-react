@@ -13,7 +13,7 @@ export default function Insertion() {
 							name="question"
 							type="text"
 							placeholder="e.g. Reverse Array"
-						></input>
+						/>
 					</div>
 					<div className="input-div">
 						<label htmlFor="source">Source</label>
@@ -22,7 +22,7 @@ export default function Insertion() {
 							name="source"
 							type="text"
 							placeholder="e.g. LeetCode #23"
-						></input>
+						/>
 					</div>
 					<div className="input-div">
 						<label htmlFor="categories">Categories</label>
@@ -31,7 +31,7 @@ export default function Insertion() {
 							name="categories"
 							type="text"
 							placeholder="e.g. array, DFS, linked-list"
-						></input>
+						/>
 					</div>
 					<div className="input-div">
 						<label htmlFor="difficulty">Difficulty</label>
@@ -51,16 +51,11 @@ export default function Insertion() {
 							name="date"
 							type="date"
 							placeholder="e.g. 1/2/2023"
-						></input>
+						/>
 					</div>
 					<div className="input-div">
 						<label htmlFor="time">Time</label>
-						<input
-							id="time"
-							name="time"
-							type="number"
-							placeholder="e.g. 60"
-						></input>
+						<input id="time" name="time" type="number" placeholder="e.g. 60" />
 					</div>
 				</div>
 				<div className="categories-selected">

@@ -1,11 +1,12 @@
 import './Table.css';
 
-// const tableData = [
+// const tableLocalData = [
 // 	{
 // 		number: 1,
 // 		question: 'merge linked lists',
 // 		source: 'LC #41',
 // 		categories: 'linked-lists, two pointers',
+// 		difficulty: 'hard',
 // 		date: '2023-03-21',
 // 		time: '73',
 // 	},
@@ -14,6 +15,7 @@ import './Table.css';
 // 		question: 'flatten array',
 // 		source: 'CTCI #864',
 // 		categories: 'array, string, nesting',
+// 		difficulty: 'medium',
 // 		date: '2022-11-12',
 // 		time: '58',
 // 	},
@@ -22,20 +24,38 @@ import './Table.css';
 // 		question: 'In-Order Binary Tree Traversal',
 // 		source: 'LC #1266',
 // 		categories: 'tree, DFS, in-order, queue, recursion',
+// 		difficulty: 'easy',
 // 		date: '2023-01-03',
 // 		time: '113',
 // 	},
 // ];
 
-// localStorage.setItem('table-data', JSON.stringify(tableData));
+// localStorage.setItem('table-data', JSON.stringify(tableLocalData));
 
 const tableData = localStorage.getItem('table-data')
 	? JSON.parse(localStorage.getItem('table-data'))
 	: [];
 
-console.log('localStorage: ' + JSON.stringify(tableData));
+const renderTableData = () => {
+	return tableData.map(
+		({ number, question, source, categories, difficulty, date, time }) => {
+			console.log('child: ' + question);
+			return (
+				<tr key={number}>
+					<td>{number}</td>
+					<td>{question}</td>
+					<td>{source}</td>
+					<td>{categories}</td>
+					<td>{difficulty}</td>
+					<td>{date}</td>
+					<td>{time}</td>
+				</tr>
+			);
+		}
+	);
+};
 
-function Table() {
+export default function Table() {
 	return (
 		<section id="table-section">
 			<table id="problem-table">
@@ -50,20 +70,8 @@ function Table() {
 						<th>Time Spent</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						{Object.keys(tableData).forEach((parent) => {
-							console.log('parent: ' + parent);
-							Object.values(tableData[parent]).map((child) => {
-								console.log('child: ' + child);
-								<td key={child}>{child}</td>;
-							});
-						})}
-					</tr>
-				</tbody>
+				<tbody>{renderTableData()}</tbody>
 			</table>
 		</section>
 	);
 }
-
-export default Table;

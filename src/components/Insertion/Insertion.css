@@ -1,20 +1,24 @@
 #insertion-section {
   margin: 20px;
-  padding: 30px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 10vh 8vw;
   border-radius: 10px;
   background-color: rgb(46, 71, 99);
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  padding: 8vh 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#clearButton {
-  margin-top: 10px;
+.input-fields {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
+@media screen and (max-width: 600px) {
+  .input-fields {
+    flex-direction: column;
+  }
+}
 .input-div {
   display: flex;
   justify-content: end;
@@ -51,12 +55,6 @@
 }
 
 #item_window {
-  margin: 20px;
-  padding: 30px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
   flex-direction: column;
   text-align: center;
   background-color: rgb(27, 38, 59);
@@ -69,15 +67,9 @@
   margin: 1rem;
 }
 
-.submit {
-  display: block;
-  margin: 2em 40% auto;
-  padding: 5px;
-  cursor: pointer;
-}
-
 #enter-button {
-  margin: 1.5rem 37% auto;
+  margin-top: 2em;
+  cursor: pointer;
   width: 4.5rem;
   height: 3rem;
   font-size: 1.2rem;

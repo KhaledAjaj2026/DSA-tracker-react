@@ -13,7 +13,7 @@ function Deletion() {
 					type="number"
 					placeholder="0"
 				></input>
-				<button id="deletButton" className="submit" onClick="deleteRow()">
+				<button id="deletButton" className="submit">
 					Delete Row
 				</button>
 			</div>
@@ -21,12 +21,7 @@ function Deletion() {
 				<label className="clear-label" htmlFor="clearButton">
 					Clear All Data:
 				</label>
-				<button
-					id="clearButton"
-					name="clearButton"
-					className="submit"
-					onClick="clearData()"
-				>
+				<button id="clearButton" name="clearButton" className="submit">
 					Clear
 				</button>
 			</div>

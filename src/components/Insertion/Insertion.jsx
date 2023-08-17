@@ -68,7 +68,7 @@ export default function Insertion() {
 						<p>Strongly Connected Component</p>
 					</div>
 				</div>
-				<button id="enter-button" className="submit" onClick={'addRow'}>
+				<button id="enter-button" className="submit">
 					Enter
 				</button>
 			</section>

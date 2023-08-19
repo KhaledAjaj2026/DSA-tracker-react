@@ -1,11 +1,8 @@
 import './Insertion.css';
 import Input from './Input/Input';
-import { useState } from 'react';
-// import $ from 'jquery';
+import { useEffect, useState } from 'react';
 
 export default function Insertion() {
-	// const tableData = JSON.parse(localStorage.getItem('table-data')) ?? [];
-
 	const [input, setInput] = useState([]);
 	const [question, setQuestion] = useState('');
 	const [source, setSource] = useState('');
@@ -36,7 +33,6 @@ export default function Insertion() {
 	const handleInput = () => {
 		if (question && source && categories && difficulty && date && time) {
 			setInput([
-				...input,
 				{
 					question: question,
 					source: source,
@@ -46,41 +42,44 @@ export default function Insertion() {
 					time: time,
 				},
 			]);
-			console.log('input set');
-			console.log('input: ' + JSON.stringify(input));
-			if (input.length) {
-				const prevLocalData = localStorage.getItem('table-data') ?? [];
-				console.log('prevLocalData B4: ' + JSON.stringify(prevLocalData));
-				prevLocalData.push(input[input.length - 1]);
-				console.log('prevLocalData AfT: ' + JSON.stringify(prevLocalData));
-				localStorage.setItem('table-data', JSON.stringify(prevLocalData));
-				setInput([]);
-				window.dispatchEvent(new Event('storage'));
-			}
 		}
 	};
+	useEffect(() => {
+		if (input.length > 0) {
+			console.log('input has re-rendered state.');
+			console.log('input: ' + JSON.stringify(input));
+			const prevLocalData =
+				JSON.parse(localStorage.getItem('table-data')) ?? [];
+			prevLocalData.push(...input);
+			localStorage.setItem('table-data', JSON.stringify(prevLocalData));
+		}
+	}, [input]);
 
-	// let localTableData;
-	// $('.table-body').append(localTableData);
-
-	// const renderTableData = () => {
-	// 	console.log('RENDERED');
-	// 	localTableData = tableData.map(
-	// 		({ number, question, source, categories, difficulty, date, time }) => {
-	// 			return (
-	// 				<tr key={number}>
-	// 					<td>{number}</td>
-	// 					<td>{question}</td>
-	// 					<td>{source}</td>
-	// 					<td>{categories}</td>
-	// 					<td>{difficulty}</td>
-	// 					<td>{date}</td>
-	// 					<td>{time}</td>
-	// 				</tr>
-	// 			);
-	// 		}
-	// 	);
-	// };
+	// useEffect(() => {
+	// 	const loadTable = () => {
+	// 		console.log('loadTable started');
+	// 		const tableData = JSON.parse(localStorage.getItem('table-data')) ?? [];
+	// 		let localTableData = tableData.map(
+	// 			({ question, source, categories, difficulty, date, time }, index) => {
+	// 				return (
+	// 					<tr key={index}>
+	// 						<td>{index}</td>
+	// 						<td>{question}</td>
+	// 						<td>{source}</td>
+	// 						<td>{categories}</td>
+	// 						<td>{difficulty}</td>
+	// 						<td>{date}</td>
+	// 						<td>{time}</td>
+	// 					</tr>
+	// 				);
+	// 			}
+	// 		);
+	// 		$('.table-body').append(localTableData);
+	// 		console.log('loadTable ended');
+	// 	};
+	// 	window.addEventListener('storage', loadTable());
+	// 	return () => window.removeEventListener('storage', loadTable());
+	// }, [input]);
 
 	return (
 		<section id="insertion-section">
@@ -91,7 +90,7 @@ export default function Insertion() {
 						label={'Question'}
 						type={'text'}
 						placeholder={'e.g. Reverse Array'}
-						handleChange={handleQuestion}
+						handleChange={handleQuestion.bind(this)}
 					/>
 					<Input
 						identity={'source'}

@@ -4,10 +4,9 @@ import { useState } from 'react';
 // import $ from 'jquery';
 
 export default function Insertion() {
-	const tableData = JSON.parse(localStorage.getItem('table-data')) ?? [];
+	// const tableData = JSON.parse(localStorage.getItem('table-data')) ?? [];
 
 	const [input, setInput] = useState([]);
-	const [number, setNumber] = useState(0);
 	const [question, setQuestion] = useState('');
 	const [source, setSource] = useState('');
 	const [categories, setCategories] = useState('');
@@ -36,12 +35,9 @@ export default function Insertion() {
 
 	const handleInput = () => {
 		if (question && source && categories && difficulty && date && time) {
-			setNumber(tableData.length + 1);
-			console.log('number set');
 			setInput([
 				...input,
 				{
-					number: number,
 					question: question,
 					source: source,
 					categories: categories,

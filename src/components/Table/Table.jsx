@@ -3,7 +3,6 @@ import './Table.css';
 
 // const tableLocalData = [
 // 	{
-// 		number: 1,
 // 		question: 'merge linked lists',
 // 		source: 'LC #41',
 // 		categories: 'linked-lists, two pointers',
@@ -12,7 +11,6 @@ import './Table.css';
 // 		time: '73',
 // 	},
 // 	{
-// 		number: 2,
 // 		question: 'flatten array',
 // 		source: 'CTCI #864',
 // 		categories: 'array, string, nesting',
@@ -21,7 +19,6 @@ import './Table.css';
 // 		time: '58',
 // 	},
 // 	{
-// 		number: 3,
 // 		question: 'In-Order Binary Tree Traversal',
 // 		source: 'LC #1266',
 // 		categories: 'tree, DFS, in-order, queue, recursion',
@@ -40,10 +37,10 @@ const tableData = localStorage.getItem('table-data')
 /** Load table from localStorage on first render. */
 const renderTableData = () => {
 	return tableData.map(
-		({ number, question, source, categories, difficulty, date, time }) => {
+		({ question, source, categories, difficulty, date, time }, index) => {
 			return (
-				<tr key={number}>
-					<td>{number}</td>
+				<tr key={index}>
+					<td>{index + 1}</td>
 					<td>{question}</td>
 					<td>{source}</td>
 					<td>{categories}</td>

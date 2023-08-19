@@ -1,3 +1,4 @@
+// import $ from 'jquery';
 import './Table.css';
 
 // const tableLocalData = [
@@ -36,10 +37,10 @@ const tableData = localStorage.getItem('table-data')
 	? JSON.parse(localStorage.getItem('table-data'))
 	: [];
 
+/** Load table from localStorage on first render. */
 const renderTableData = () => {
 	return tableData.map(
 		({ number, question, source, categories, difficulty, date, time }) => {
-			console.log('child: ' + question);
 			return (
 				<tr key={number}>
 					<td>{number}</td>
@@ -70,7 +71,7 @@ export default function Table() {
 						<th>Time Spent</th>
 					</tr>
 				</thead>
-				<tbody>{renderTableData()}</tbody>
+				<tbody className="table-body">{renderTableData()}</tbody>
 			</table>
 		</section>
 	);

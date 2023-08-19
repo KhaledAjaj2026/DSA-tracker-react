@@ -1,6 +1,6 @@
 #insertion-section {
     margin: 20px;
-    padding: 10vh 8vw;
+    padding: 10vh 8vh;
     border-radius: 10px;
     background-color: rgb(46, 71, 99);
     display: flex;
@@ -11,7 +11,7 @@
 
 .input-fields {
     display: flex;
-    flex-direction: row;
+    // flex-direction: row;
     justify-content: center;
 }
 
@@ -33,7 +33,7 @@
 
     input,
     select {
-        margin-left: 5rem;
+        margin-left: 3rem;
         width: 12rem;
         height: 1.8rem;
         line-height: 1.2rem;
@@ -47,32 +47,6 @@
         height: 1.8rem;
         width: 7rem;
         margin-left: 5rem;
-    }
-}
-
-#add-category {
-    width: 4rem;
-    margin: 0;
-    margin-left: 1.2rem;
-}
-
-#categories-selected_title {
-    text-align: center;
-}
-
-#item_window {
-    // @include section-layout();
-    flex-direction: column;
-    text-align: center;
-    background-color: rgb(27, 38, 59);
-    width: 15rem;
-    height: 10rem;
-    padding: 1.2rem;
-    // padding-bottom: 3.5rem;
-    overflow-y: scroll;
-
-    p {
-        margin: 1rem;
     }
 }
 

@@ -1,6 +1,31 @@
+import { useState } from 'react';
 import './Deletion.css';
 
+const tableData = JSON.parse(localStorage.getItem('table-data'));
+
+const deleteRow = (rowNum) => {
+	if (rowNum < 1 || rowNum > tableData.length) {
+		alert('Invalid row number.');
+	} else {
+		const tempStorage = JSON.parse(localStorage.getItem('table-data'));
+		console.log('rowNum: ' + rowNum);
+		console.log('tempStorage: ' + JSON.stringify(tempStorage));
+		console.log('tempStorage[1]: ' + JSON.stringify(tempStorage[1]));
+		console.log('tempStorage type: ' + typeof tempStorage);
+		// tempStorage[rowNum].number = tempStorage[rowNum].number - 1;
+		tempStorage.splice(rowNum - 1, 1);
+		console.log('tempStorage after delete: ' + JSON.stringify(tempStorage));
+		localStorage.setItem('table-data', JSON.stringify(tempStorage));
+		// console.log('row deleted');
+	}
+};
+
 function Deletion() {
+	const [row, setRow] = useState(0);
+
+	const handleRow = (event) => {
+		setRow(parseInt(event.target.value));
+	};
 	return (
 		<section id="deletion-section">
 			<div className="deleteRow-div">
@@ -12,8 +37,13 @@ function Deletion() {
 					name="deleteRow"
 					type="number"
 					placeholder="0"
+					onChange={handleRow}
 				></input>
-				<button id="deletButton" className="submit">
+				<button
+					id="deletButton"
+					className="submit"
+					onClick={() => deleteRow(row)}
+				>
 					Delete Row
 				</button>
 			</div>

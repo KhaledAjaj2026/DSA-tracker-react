@@ -4,7 +4,10 @@ import { useState } from 'react';
 // import $ from 'jquery';
 
 export default function Insertion() {
+	const tableData = JSON.parse(localStorage.getItem('table-data')) ?? [];
+
 	const [input, setInput] = useState([]);
+	const [number, setNumber] = useState(0);
 	const [question, setQuestion] = useState('');
 	const [source, setSource] = useState('');
 	const [categories, setCategories] = useState('');
@@ -32,18 +35,57 @@ export default function Insertion() {
 	};
 
 	const handleInput = () => {
-		setInput([
-			...input,
-			{
-				question: question,
-				source: source,
-				categories: categories,
-				difficulty: difficulty,
-				date: date,
-				time: time,
-			},
-		]);
+		if (question && source && categories && difficulty && date && time) {
+			setNumber(tableData.length + 1);
+			console.log('number set');
+			setInput([
+				...input,
+				{
+					number: number,
+					question: question,
+					source: source,
+					categories: categories,
+					difficulty: difficulty,
+					date: date,
+					time: time,
+				},
+			]);
+			console.log('input set');
+			console.log('input: ' + JSON.stringify(input));
+			if (input.length) {
+				const prevLocalData = localStorage.getItem('table-data') ?? [];
+				console.log('prevLocalData B4: ' + JSON.stringify(prevLocalData));
+				prevLocalData.push(input[input.length - 1]);
+				console.log('prevLocalData AfT: ' + JSON.stringify(prevLocalData));
+				localStorage.setItem('table-data', JSON.stringify(prevLocalData));
+				setInput([]);
+				window.dispatchEvent(new Event('storage'));
+			}
+		}
 	};
+
+	// let localTableData;
+	// $('.table-body').append(localTableData);
+
+	// const renderTableData = () => {
+	// 	console.log('RENDERED');
+	// 	localTableData = tableData.map(
+	// 		({ number, question, source, categories, difficulty, date, time }) => {
+	// 			return (
+	// 				<tr key={number}>
+	// 					<td>{number}</td>
+	// 					<td>{question}</td>
+	// 					<td>{source}</td>
+	// 					<td>{categories}</td>
+	// 					<td>{difficulty}</td>
+	// 					<td>{date}</td>
+	// 					<td>{time}</td>
+	// 				</tr>
+	// 			);
+	// 		}
+	// 	);
+	// };
+
 	return (
 		<section id="insertion-section">
 			<div className="input-fields">
@@ -53,7 +95,7 @@ export default function Insertion() {
 						label={'Question'}
 						type={'text'}
 						placeholder={'e.g. Reverse Array'}
-						handleChange={handleQuestion.bind(this)}
+						handleChange={handleQuestion}
 					/>
 					<Input
 						identity={'source'}
@@ -103,16 +145,6 @@ export default function Insertion() {
 					/>
 				</div>
 			</div>
-			{/* <div className="categories-selected">
-				<p id="categories-selected_title">Selected Categories (max 5):</p>
-				<div id="item_window">
-					<p>Strongly Connected Component</p>
-					<p>Strongly Connected Component</p>
-					<p>Strongly Connected Component</p>
-					<p>Strongly Connected Component</p>
-					<p>Strongly Connected Component</p>
-				</div>
-			</div> */}
 			<button id="enter-button" className="submit" onClick={handleInput}>
 				Enter
 			</button>

@@ -55,32 +55,6 @@ export default function Insertion() {
 		}
 	}, [input]);
 
-	// useEffect(() => {
-	// 	const loadTable = () => {
-	// 		console.log('loadTable started');
-	// 		const tableData = JSON.parse(localStorage.getItem('table-data')) ?? [];
-	// 		let localTableData = tableData.map(
-	// 			({ question, source, categories, difficulty, date, time }, index) => {
-	// 				return (
-	// 					<tr key={index}>
-	// 						<td>{index}</td>
-	// 						<td>{question}</td>
-	// 						<td>{source}</td>
-	// 						<td>{categories}</td>
-	// 						<td>{difficulty}</td>
-	// 						<td>{date}</td>
-	// 						<td>{time}</td>
-	// 					</tr>
-	// 				);
-	// 			}
-	// 		);
-	// 		$('.table-body').append(localTableData);
-	// 		console.log('loadTable ended');
-	// 	};
-	// 	window.addEventListener('storage', loadTable());
-	// 	return () => window.removeEventListener('storage', loadTable());
-	// }, [input]);
-
 	return (
 		<section id="insertion-section">
 			<div className="input-fields">

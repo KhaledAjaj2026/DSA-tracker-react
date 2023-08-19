@@ -8,15 +8,8 @@ const deleteRow = (rowNum) => {
 		alert('Invalid row number.');
 	} else {
 		const tempStorage = JSON.parse(localStorage.getItem('table-data'));
-		console.log('rowNum: ' + rowNum);
-		console.log('tempStorage: ' + JSON.stringify(tempStorage));
-		console.log('tempStorage[1]: ' + JSON.stringify(tempStorage[1]));
-		console.log('tempStorage type: ' + typeof tempStorage);
-		// tempStorage[rowNum].number = tempStorage[rowNum].number - 1;
 		tempStorage.splice(rowNum - 1, 1);
-		console.log('tempStorage after delete: ' + JSON.stringify(tempStorage));
 		localStorage.setItem('table-data', JSON.stringify(tempStorage));
-		// console.log('row deleted');
 	}
 };
 

@@ -1,11 +1,8 @@
 import './App.css';
+import ScrollWidget from './ScrollWidget/ScrollWidget';
 import Insertion from './Insertion/Insertion';
 import Table from './Table/Table';
 import Deletion from './Deletion/Deletion';
-
-const scrollToTopWidget = () => {
-	console.log('scroll widget');
-};
 
 export default function App() {
 	return (
@@ -16,6 +13,7 @@ export default function App() {
 					Keep track of your progress in data-structure and algorithm problems
 				</h2>
 			</header>
+			<ScrollWidget />
 			<Insertion />
 			<Table />
 			<Deletion />

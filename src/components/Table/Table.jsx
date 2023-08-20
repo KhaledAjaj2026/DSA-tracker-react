@@ -1,6 +1,6 @@
 import './Table.css';
 
-/** test data for populating localStorage. */
+// /** test data for populating localStorage. */
 // const tableLocalData = [
 // 	{
 // 		question: 'merge linked lists',

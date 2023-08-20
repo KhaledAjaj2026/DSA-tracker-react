@@ -46,12 +46,11 @@ export default function Insertion() {
 	};
 	useEffect(() => {
 		if (input.length > 0) {
-			console.log('input has re-rendered state.');
-			console.log('input: ' + JSON.stringify(input));
 			const prevLocalData =
 				JSON.parse(localStorage.getItem('table-data')) ?? [];
 			prevLocalData.push(...input);
 			localStorage.setItem('table-data', JSON.stringify(prevLocalData));
+			location.reload();
 		}
 	}, [input]);
 

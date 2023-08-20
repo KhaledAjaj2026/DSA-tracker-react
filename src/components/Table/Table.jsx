@@ -1,6 +1,6 @@
-// import $ from 'jquery';
 import './Table.css';
 
+/** test data for populating localStorage. */
 // const tableLocalData = [
 // 	{
 // 		question: 'merge linked lists',

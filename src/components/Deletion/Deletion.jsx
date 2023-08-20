@@ -4,12 +4,31 @@ import './Deletion.css';
 const tableData = JSON.parse(localStorage.getItem('table-data'));
 
 const deleteRow = (rowNum) => {
-	if (rowNum < 1 || rowNum > tableData.length) {
+	if (!tableData) {
+		alert('No rows to delete.');
+	} else if (rowNum < 1 || rowNum > tableData.length) {
 		alert('Invalid row number.');
 	} else {
 		const tempStorage = JSON.parse(localStorage.getItem('table-data'));
 		tempStorage.splice(rowNum - 1, 1);
 		localStorage.setItem('table-data', JSON.stringify(tempStorage));
+		location.reload();
+	}
+};
+
+const clearAllData = () => {
+	const clearChoice = prompt(
+		'Are you sure you want to clear all data? Type "Yes" to continue.'
+	);
+	if (clearChoice === 'Yes' || clearChoice === 'yes') {
+		localStorage.clear();
+		window.scrollTo(0, 0);
+		location.reload();
+		alert('Data cleared.');
+	} else if (clearChoice === null) {
+		alert('Clear cancelled.');
+	} else {
+		alert('Incorrect input, clear cancelled.');
 	}
 };
 
@@ -44,7 +63,12 @@ function Deletion() {
 				<label className="clear-label" htmlFor="clearButton">
 					Clear All Data:
 				</label>
-				<button id="clearButton" name="clearButton" className="submit">
+				<button
+					id="clearButton"
+					name="clearButton"
+					className="submit"
+					onClick={clearAllData}
+				>
 					Clear
 				</button>
 			</div>

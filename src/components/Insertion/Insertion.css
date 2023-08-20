@@ -35,7 +35,12 @@
   line-height: 1.2rem;
 }
 .input-div select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   width: 12.2rem;
+  padding-left: 3px;
+  background: url("src/assets/arrow-down.svg") no-repeat right #0d1b2a;
 }
 .input-div #category-menu {
   height: 1.8rem;

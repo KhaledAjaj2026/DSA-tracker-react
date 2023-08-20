@@ -1,4 +1,27 @@
 import './ScrollWidget.css';
+import $ from 'jquery';
+
+document.addEventListener('scroll', () => {
+	let lastKnownScrollPosition = window.scrollY;
+	console.log(lastKnownScrollPosition);
+
+	if (lastKnownScrollPosition > 80) {
+		showArrow();
+	} else if (
+		lastKnownScrollPosition <= 80 &&
+		$('.arrow-down').css('opacity') == 1
+	) {
+		hideArrow();
+	}
+});
+
+const showArrow = () => {
+	$('.arrow-down').css('animation', '0.3s ease-in forwards showArrow');
+};
+
+const hideArrow = () => {
+	$('.arrow-down').css('animation', '0.3s ease-in forwards hideArrow');
+};
 
 const scrollUp = () => {
 	window.scrollTo({
@@ -7,24 +30,21 @@ const scrollUp = () => {
 	});
 };
 
-/** TODO:
-
-[  ] make element and style.
-[  ] appear when scroll lower than top.
-[ √ ] scroll page to top.
-[  ] disappear when scroll at top or within parameters.
-*/
 export default function ScrollWidget() {
 	return (
-		<div id="container_scroll-widget">
+		<button
+			id="container_scroll-widget"
+			className="arrow-down"
+			onClick={() => {
+				scrollUp();
+			}}
+		>
 			<img
-				className="arrow-button hidden"
 				src="src/assets/arrow-up.svg"
 				width={80}
 				height={80}
 				alt="scroll to top"
-				onClick={scrollUp}
 			/>
-		</div>
+		</button>
 	);
 }

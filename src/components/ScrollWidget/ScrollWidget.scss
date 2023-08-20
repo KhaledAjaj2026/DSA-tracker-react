@@ -1,11 +1,42 @@
 #container_scroll-widget {
     position: fixed;
-    top: 80vh;
+    top: 85vh;
     left: 90vw;
-    height: 80px;
     cursor: pointer;
-    background-color: #98acd6;
+    background-color: #2e4763;
     color: #fff;
     border-radius: 25%;
     border: 0.5px solid black;
+    box-shadow: 0 5px #06101f;
+    opacity: 0;
+}
+
+#container_scroll-widget:hover {
+    box-shadow: 0 3px #06101f;
+    top: 85.3vh;
+}
+
+#container_scroll-widget:active {
+    box-shadow: 0 0 #06101f;
+    top: 85.5vh;
+}
+
+@keyframes showArrow {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hideArrow {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }

@@ -58,7 +58,7 @@ input {
 input,
 select {
   border-radius: 3px;
-  background-color: rgb(13, 27, 42);
+  background-color: #0d1b2a;
   border: none;
 }
 
@@ -75,7 +75,6 @@ button {
   transition: all 0.2s ease;
   position: relative;
   display: inline-block;
-  outline: none;
   border-radius: 5px;
   border: 0.5px solid black;
   background: #98acd6;

@@ -3,7 +3,9 @@ import Input from './Input/Input';
 import { useEffect, useState } from 'react';
 
 export default function Insertion() {
+	/* State responsible for input of each table row. */
 	const [input, setInput] = useState([]);
+	/* Each state repsonsible for each input field. */
 	const [question, setQuestion] = useState('');
 	const [source, setSource] = useState('');
 	const [categories, setCategories] = useState('');
@@ -30,6 +32,7 @@ export default function Insertion() {
 		setTime(event.target.value);
 	};
 
+	/** Inserts state of each input element and updates 'input', triggering re-render. */
 	const handleInput = () => {
 		if (question && source && categories && difficulty && date && time) {
 			setInput([
@@ -44,6 +47,7 @@ export default function Insertion() {
 			]);
 		}
 	};
+	/** Updates localStorage with data from 'input', triggers only when 'input' is changed. */
 	useEffect(() => {
 		if (input.length > 0) {
 			const prevLocalData =

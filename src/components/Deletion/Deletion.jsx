@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import './Deletion.css';
 
+/** Variable holding parsed data in localStorage. Data is an array holding objects. */
 const tableData = JSON.parse(localStorage.getItem('table-data'));
 
+/** Delete specified row from table by deleting corresponding data from localStorage. */
 const deleteRow = (rowNum) => {
 	if (!tableData) {
 		alert('No rows to delete.');
@@ -16,6 +18,7 @@ const deleteRow = (rowNum) => {
 	}
 };
 
+/** Clears all data from localStorage. */
 const clearAllData = () => {
 	const clearChoice = prompt(
 		'Are you sure you want to clear all data? Type "Yes" to continue.'
@@ -32,7 +35,7 @@ const clearAllData = () => {
 	}
 };
 
-function Deletion() {
+export default function Deletion() {
 	const [row, setRow] = useState(0);
 
 	const handleRow = (event) => {
@@ -75,5 +78,3 @@ function Deletion() {
 		</section>
 	);
 }
-
-export default Deletion;

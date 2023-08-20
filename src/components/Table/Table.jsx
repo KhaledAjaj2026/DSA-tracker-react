@@ -1,6 +1,6 @@
 import './Table.css';
 
-/** test data for populating localStorage. */
+/* test data for populating localStorage. */
 // const tableLocalData = [
 // 	{
 // 		question: 'merge linked lists',
@@ -29,12 +29,14 @@ import './Table.css';
 // ];
 
 // localStorage.setItem('table-data', JSON.stringify(tableLocalData));
+/* end test data */
 
+/** Variable holding parsed data in localStorage. Data is an array holding objects. */
 const tableData = localStorage.getItem('table-data')
 	? JSON.parse(localStorage.getItem('table-data'))
 	: [];
 
-/** Load table from localStorage on first render. */
+/** Load table from localStorage on render. */
 const renderTableData = () => {
 	return tableData.map(
 		({ question, source, categories, difficulty, date, time }, index) => {

@@ -3,6 +3,10 @@ import Insertion from './Insertion/Insertion';
 import Table from './Table/Table';
 import Deletion from './Deletion/Deletion';
 
+const scrollToTopWidget = () => {
+	console.log('scroll widget');
+};
+
 export default function App() {
 	return (
 		<>

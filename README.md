@@ -1,6 +1,19 @@
 # DSA Problem Tracker - React Migration
 
-A dedicated tracker for all DSA problems solved, presented as a table of problems.
+A dedicated tracker for all DSA problems solved, presented as a table of problems. Uses localStorage to store data on machine.
+
+## How to Use
+
+Time yourself while solving DSA questions. Once completed, enter the following:
+
+- Question (name of the problem)
+- Source (e.g. LeetCode #258, CTCI #64, G4G)
+- Categories (e.g. arrays, two-pointers, DFS/BFS)
+- Difficulty (easy/medium/hard)
+- Date (mm/dd/yyyy)
+- Time (minutes to solve question)
+
+Then click the 'Enter' button and see your data inserted into the table below. Table data remains on localStorage.
 
 ## Lessons Learned
 

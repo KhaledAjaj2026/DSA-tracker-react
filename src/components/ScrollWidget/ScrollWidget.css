@@ -1,7 +1,7 @@
 #container_scroll-widget {
   position: fixed;
-  top: 85vh;
-  left: 90vw;
+  top: 85%;
+  left: 90%;
   cursor: pointer;
   background-color: #2e4763;
   color: #fff;
@@ -11,16 +11,15 @@
   opacity: 0;
 }
 
-#container_scroll-widget:hover {
-  box-shadow: 0 3px #06101f;
-  top: 85.3vh;
+@media screen and (max-width: 800px) {
+  #container_scroll-widget {
+    left: 75%;
+  }
+  #container_scroll-widget svg {
+    width: 120px;
+    height: 120px;
+  }
 }
-
-#container_scroll-widget:active {
-  box-shadow: 0 0 #06101f;
-  top: 85.5vh;
-}
-
 @keyframes showArrow {
   0% {
     opacity: 0;

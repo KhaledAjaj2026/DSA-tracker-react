@@ -5,47 +5,41 @@ import { useEffect, useState } from 'react';
 export default function Insertion() {
 	/* State responsible for input of each table row. */
 	const [input, setInput] = useState([]);
-	/* Each state repsonsible for each input field. */
-	const [question, setQuestion] = useState('');
-	const [source, setSource] = useState('');
-	const [categories, setCategories] = useState('');
-	const [difficulty, setDifficulty] = useState('');
-	const [date, setDate] = useState('');
-	const [time, setTime] = useState('');
+	/* Data repsonsible for each input field. */
+	const inputData = new Map();
 
 	const handleQuestion = (event) => {
-		setQuestion(event.target.value);
+		console.log(event.target);
+		inputData.set('question', event.target.value);
 	};
 	const handleSource = (event) => {
-		setSource(event.target.value);
+		inputData.set('source', event.target.value);
 	};
 	const handleCategories = (event) => {
-		setCategories(event.target.value);
+		inputData.set('categories', event.target.value);
 	};
 	const handleDifficulty = (event) => {
-		setDifficulty(event.target.value);
+		inputData.set('difficulty', event.target.value);
 	};
 	const handleDate = (event) => {
-		setDate(event.target.value);
+		inputData.set('date', event.target.value);
 	};
 	const handleTime = (event) => {
-		setTime(event.target.value);
+		inputData.set('time', event.target.value);
 	};
 
 	/** Inserts state of each input element and updates 'input', triggering re-render. */
 	const handleInput = () => {
-		if (question && source && categories && difficulty && date && time) {
-			setInput([
-				{
-					question: question,
-					source: source,
-					categories: categories,
-					difficulty: difficulty,
-					date: date,
-					time: time,
-				},
-			]);
-		}
+		setInput([
+			{
+				question: inputData.get('question'),
+				source: inputData.get('source'),
+				categories: inputData.get('categories'),
+				difficulty: inputData.get('difficulty'),
+				date: inputData.get('date'),
+				time: inputData.get('time'),
+			},
+		]);
 	};
 	/** Updates localStorage with data from 'input', triggers only when 'input' is changed. */
 	useEffect(() => {
@@ -67,21 +61,21 @@ export default function Insertion() {
 						label={'Question'}
 						type={'text'}
 						placeholder={'e.g. Reverse Array'}
-						handleChange={handleQuestion.bind(this)}
+						handleChange={handleQuestion}
 					/>
 					<Input
 						identity={'source'}
 						label={'Source'}
 						type={'text'}
 						placeholder={'e.g. LeetCode #23'}
-						handleChange={handleSource.bind(this)}
+						handleChange={handleSource}
 					/>
 					<Input
 						identity={'categories'}
 						label={'Categories'}
 						type={'text'}
 						placeholder={'e.g. array, DFS, linked-list'}
-						handleChange={handleCategories.bind(this)}
+						handleChange={handleCategories}
 					/>
 				</div>
 				<div className="input-right">
@@ -106,14 +100,14 @@ export default function Insertion() {
 						label={'Date'}
 						type={'date'}
 						placeholder={'e.g. 1/2/2023'}
-						handleChange={handleDate.bind(this)}
+						handleChange={handleDate}
 					/>
 					<Input
 						identity={'time'}
 						label={'Time'}
 						type={'number'}
 						placeholder={'e.g. 60'}
-						handleChange={handleTime.bind(this)}
+						handleChange={handleTime}
 					/>
 				</div>
 			</div>

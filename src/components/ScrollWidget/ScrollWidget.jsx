@@ -3,7 +3,6 @@ import $ from 'jquery';
 
 document.addEventListener('scroll', () => {
 	let lastKnownScrollPosition = window.scrollY;
-	console.log(lastKnownScrollPosition);
 
 	if (lastKnownScrollPosition > 80) {
 		showArrow();

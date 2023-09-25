@@ -26,6 +26,7 @@ Learned about React render lifecycles, and how useEffect re-renders site on stat
 - Change from localStorage to dedicated server for user data.
 - Update styling to comply with webkit and moz browsers.
 - Implement Edit functionality, able to edit specific items in table.
+- Create performance tab that shows averages of solve-times and # of easy/med/hard questions completed.
 - Create sort/filter menu.
 
 ## Deployment

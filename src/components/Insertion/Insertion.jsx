@@ -3,46 +3,37 @@ import Input from './Input/Input';
 import { useEffect, useState } from 'react';
 
 export default function Insertion() {
-	/* State responsible for input of each table row. */
+	/** State responsible for input of each table row. */
 	const [input, setInput] = useState([]);
-	/* Data repsonsible for each input field. */
+	/** Data repsonsible for each input field. */
 	const inputData = new Map();
-
-	const handleQuestion = (event) => {
-		console.log(event.target);
-		inputData.set('question', event.target.value);
-	};
-	const handleSource = (event) => {
-		inputData.set('source', event.target.value);
-	};
-	const handleCategories = (event) => {
-		inputData.set('categories', event.target.value);
-	};
-	const handleDifficulty = (event) => {
-		inputData.set('difficulty', event.target.value);
-	};
-	const handleDate = (event) => {
-		inputData.set('date', event.target.value);
-	};
-	const handleTime = (event) => {
-		inputData.set('time', event.target.value);
+	/** Retrieve data input according to input-field id and update it. */
+	const handleDataInput = (event) => {
+		inputData.set(event.target.id, event.target.value);
 	};
 
-	/** Inserts state of each input element and updates 'input', triggering re-render. */
+	/** Check that all input fields full, then update 'input', triggering re-render. */
 	const handleInput = () => {
-		setInput([
-			{
-				question: inputData.get('question'),
-				source: inputData.get('source'),
-				categories: inputData.get('categories'),
-				difficulty: inputData.get('difficulty'),
-				date: inputData.get('date'),
-				time: inputData.get('time'),
-			},
-		]);
+		let numberOfInputs = 0;
+		inputData.forEach((value) => {
+			if (value) numberOfInputs++;
+		});
+		if (numberOfInputs === 6) {
+			setInput([
+				{
+					question: inputData.get('question'),
+					source: inputData.get('source'),
+					categories: inputData.get('categories'),
+					difficulty: inputData.get('difficulty'),
+					date: inputData.get('date'),
+					time: inputData.get('time'),
+				},
+			]);
+		}
 	};
-	/** Updates localStorage with data from 'input', triggers only when 'input' is changed. */
+	/** Update localStorage with data from 'input', trigger only when 'input' is changed. */
 	useEffect(() => {
+		// if-statement responsible for preventing infinite re-renders for 'input' state.
 		if (input.length > 0) {
 			const prevLocalData =
 				JSON.parse(localStorage.getItem('table-data')) ?? [];
@@ -61,21 +52,21 @@ export default function Insertion() {
 						label={'Question'}
 						type={'text'}
 						placeholder={'e.g. Reverse Array'}
-						handleChange={handleQuestion}
+						handleChange={handleDataInput}
 					/>
 					<Input
 						identity={'source'}
 						label={'Source'}
 						type={'text'}
 						placeholder={'e.g. LeetCode #23'}
-						handleChange={handleSource}
+						handleChange={handleDataInput}
 					/>
 					<Input
 						identity={'categories'}
 						label={'Categories'}
 						type={'text'}
 						placeholder={'e.g. array, DFS, linked-list'}
-						handleChange={handleCategories}
+						handleChange={handleDataInput}
 					/>
 				</div>
 				<div className="input-right">
@@ -85,7 +76,7 @@ export default function Insertion() {
 							name="difficulty"
 							id="difficulty"
 							defaultValue="none-d"
-							onChange={handleDifficulty}
+							onChange={handleDataInput}
 						>
 							<option value="none-d" disabled>
 								Select difficulty
@@ -100,14 +91,14 @@ export default function Insertion() {
 						label={'Date'}
 						type={'date'}
 						placeholder={'e.g. 1/2/2023'}
-						handleChange={handleDate}
+						handleChange={handleDataInput}
 					/>
 					<Input
 						identity={'time'}
 						label={'Time'}
 						type={'number'}
 						placeholder={'e.g. 60'}
-						handleChange={handleTime}
+						handleChange={handleDataInput}
 					/>
 				</div>
 			</div>

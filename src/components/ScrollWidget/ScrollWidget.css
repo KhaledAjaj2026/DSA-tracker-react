@@ -13,7 +13,7 @@
 
 @media screen and (max-width: 800px) {
   #container_scroll-widget {
-    left: 75%;
+    left: 80%;
   }
   #container_scroll-widget svg {
     width: 120px;

@@ -13,7 +13,7 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 950px) {
   .input-fields {
     flex-direction: column;
   }
@@ -23,18 +23,21 @@
   justify-content: end;
   margin: 10px;
 }
-.input-div label {
+
+label {
   padding-left: 10px;
   padding-right: 10px;
 }
-.input-div input,
-.input-div select {
+
+input,
+select {
   margin-left: 3rem;
   width: 12rem;
   height: 1.8rem;
   line-height: 1.2rem;
 }
-.input-div select {
+
+select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -42,15 +45,30 @@
   padding-left: 3px;
   background: url("/arrow-down.svg") no-repeat right #0d1b2a;
 }
-.input-div #category-menu {
-  height: 1.8rem;
-  width: 7rem;
-  margin-left: 5rem;
-}
 
 #enter-button {
   margin-top: 2em;
   width: 4.5rem;
   height: 3rem;
   font-size: 1.2rem;
+}
+
+@media screen and (max-width: 600px) {
+  label {
+    font-size: 0.8rem;
+    padding: none;
+  }
+  input,
+  select {
+    width: 10rem;
+    margin-left: 1.5rem;
+  }
+  select {
+    width: 10.2rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  #insertion-section {
+    padding: 4vh;
+  }
 }/*# sourceMappingURL=Insertion.css.map */

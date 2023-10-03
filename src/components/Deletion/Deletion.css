@@ -10,10 +10,15 @@
   align-items: center;
 }
 
+@media screen and (max-width: 950px) {
+  #deletion-section {
+    width: 50vw;
+  }
+}
 @media screen and (max-width: 600px) {
   #deletion-section {
-    width: 80vw;
-    margin: auto;
+    width: auto;
+    margin: 20px;
   }
 }
 .deleteRow-div {

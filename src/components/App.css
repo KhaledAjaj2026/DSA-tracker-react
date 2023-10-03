@@ -3,3 +3,10 @@
   padding: 2rem;
   text-align: center;
 }
+
+@media screen and (max-width: 600px) {
+  #root {
+    margin: 0;
+    padding: 0;
+  }
+}

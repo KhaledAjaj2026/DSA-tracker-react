@@ -15,6 +15,10 @@ Time yourself while solving DSA questions. Once completed, enter the following:
 
 Then click the 'Enter' button and see your data inserted into the table below. Table data remains on localStorage.
 
+## Motivation
+
+While a simple Excel document would suffice for the same purpose, this challenged me to make a web-app dedicated to saving progress in DSA practice. Through practical experience I learned about many CRUD concepts and best practices.
+
 ## Lessons Learned
 
 Same project as [this](https://github.com/KhaledAjaj2026/DSA-problem-tracker) except migrated to a React environment. Quite the challenge converting global variables from old project, to state in new project. Separating parts of page into components made development much easier than working with just HTML5 markup. Really liked using hooks to manage interactivity of site.

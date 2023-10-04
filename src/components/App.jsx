@@ -1,5 +1,5 @@
 import './App.css';
-// import ScrollWidget from './ScrollWidget/ScrollWidget';
+import ScrollWidget from './ScrollWidget/ScrollWidget';
 import Insertion from './Insertion/Insertion';
 import Table from './Table/Table';
 import Deletion from './Deletion/Deletion';
@@ -13,7 +13,7 @@ export default function App() {
 					Keep track of your progress in data-structure and algorithm problems
 				</h2>
 			</header>
-			{/* <ScrollWidget /> */}
+			<ScrollWidget />
 			<Insertion />
 			<Deletion />
 			<Table />

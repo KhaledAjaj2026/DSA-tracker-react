@@ -55,6 +55,9 @@ select {
 }
 
 @media screen and (max-width: 600px) {
+    #insertion-section {
+        padding: 4vh;
+    }
 
     label {
         font-size: 0.8rem;
@@ -69,11 +72,5 @@ select {
 
     select {
         width: 10.2rem;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    #insertion-section {
-        padding: 4vh;
     }
 }

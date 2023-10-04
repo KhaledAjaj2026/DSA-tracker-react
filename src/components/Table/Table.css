@@ -26,18 +26,21 @@ th {
   #table-section {
     display: flex;
     justify-content: center;
-  }
-  #problem-table {
-    border-collapse: separate;
-  }
-  .table-body {
-    display: grid;
-    grid-template-columns: 1fr;
+    margin: 20px;
+    padding: 0;
   }
   thead {
     display: none;
   }
-  td {
+  tr {
     display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin: 20px 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  tr {
+    font-size: 0.8rem;
   }
 }/*# sourceMappingURL=Table.css.map */

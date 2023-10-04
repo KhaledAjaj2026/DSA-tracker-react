@@ -1,4 +1,7 @@
 #table-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 20px;
   padding: 30px 0;
   border-radius: 10px;
@@ -24,8 +27,6 @@ th {
 
 @media screen and (max-width: 720px) {
   #table-section {
-    display: flex;
-    justify-content: center;
     margin: 20px;
     padding: 0;
   }

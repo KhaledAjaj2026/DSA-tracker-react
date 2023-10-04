@@ -44,6 +44,7 @@ export default function ScrollWidget() {
 				viewBox="0 0 24 24"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
+				alt="up-arrow for scrolling back to top."
 			>
 				<path
 					opacity="0.15"

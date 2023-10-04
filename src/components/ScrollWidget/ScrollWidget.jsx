@@ -4,10 +4,10 @@ import $ from 'jquery';
 document.addEventListener('scroll', () => {
 	let lastKnownScrollPosition = window.scrollY;
 
-	if (lastKnownScrollPosition > 80) {
+	if (lastKnownScrollPosition > 300) {
 		showArrow();
 	} else if (
-		lastKnownScrollPosition <= 80 &&
+		lastKnownScrollPosition <= 300 &&
 		$('.arrow-down').css('opacity') == 1
 	) {
 		hideArrow();
@@ -39,8 +39,8 @@ export default function ScrollWidget() {
 			}}
 		>
 			<svg
-				width="80px"
-				height="80px"
+				width="100px"
+				height="100px"
 				viewBox="0 0 24 24"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"

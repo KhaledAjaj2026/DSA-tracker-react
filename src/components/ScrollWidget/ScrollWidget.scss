@@ -1,6 +1,6 @@
 #container_scroll-widget {
     position: fixed;
-    top: 85vh;
+    top: 80vh;
     left: 85vw;
     cursor: pointer;
     background-color: #2e4763;
@@ -14,12 +14,12 @@
 @media screen and (max-width: 600px) {
     #container_scroll-widget {
         svg {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
         }
 
-        top: 80vh;
-        left: 60vw;
+        top: 83vh;
+        left: 65vw;
     }
 }
 

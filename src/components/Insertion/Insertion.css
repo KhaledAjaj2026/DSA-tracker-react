@@ -1,6 +1,7 @@
 #insertion-section {
-  margin: 20px;
-  padding: 8vh;
+  margin: 20px auto;
+  padding: 5vh;
+  width: 65vw;
   border-radius: 10px;
   background-color: #2e4763;
   display: flex;
@@ -56,6 +57,8 @@ select {
 @media screen and (max-width: 600px) {
   #insertion-section {
     padding: 4vh;
+    margin: 20px;
+    width: auto;
   }
   label {
     font-size: 0.8rem;

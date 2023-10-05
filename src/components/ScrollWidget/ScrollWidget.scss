@@ -1,7 +1,7 @@
 #container_scroll-widget {
     position: fixed;
-    top: 80vh;
-    left: 85vw;
+    bottom: 30px;
+    right: 30px;
     cursor: pointer;
     background-color: #2e4763;
     color: #fff;
@@ -17,9 +17,6 @@
             width: 80px;
             height: 80px;
         }
-
-        top: 83vh;
-        left: 65vw;
     }
 }
 
